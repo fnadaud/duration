@@ -7,16 +7,53 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #d8e4d7;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(61, 61, 61);
 }
 
 .App-link {
   color: #09d3ac;
+}
+
+@-webkit-keyframes pulse {50% {width:6vw;height:6vw;}}
+@-moz-keyframes pulse {50% {width:6vw;height:6vw;}}
+@-ms-keyframes pulse {50% {width:6vw;height:6vw;}}
+@keyframes pulse {50% {width:6vw;height:6vw;}}
+
+.pulsing-heart {
+  -webkit-animation: pulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
+   -moz-animation: pulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
+   -ms-animation: pulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
+   animation: pulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+#heart {
+ position:relative;
+ width:5vw;
+ height:5vw;
+ margin: 5vw auto 0 auto;
+ background: rgb(199, 58, 58);
+ -ms-transform: rotate(45deg); /* IE 9 */
+ -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+ transform: rotate(45deg);
+}
+#heart:before,
+#heart:after {
+  position:absolute;
+  content: "";
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  background: rgb(199, 58, 58);
+  top: -50%;
+  left: 0;
+}
+#heart:after {
+  left: -50%;
+  top: 0;
 }
